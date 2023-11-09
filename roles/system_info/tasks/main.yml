@@ -15,5 +15,5 @@
           version: "{{ system_info_json['deployments'][0]['version'] }}"
           checksum: "{{ system_info_json['deployments'][0]['checksum'] }}"
       - rollback:
-          version: "{{ system_info_json['deployments'][1]['version'] }}"
-          checksum: "{{ system_info_json['deployments'][1]['checksum'] }}"
+          version: "{{ system_info_json['deployments'][1]['version'] | default(None) }}"
+          checksum: "{{ system_info_json['deployments'][1]['checksum'] | default(None) }}"
